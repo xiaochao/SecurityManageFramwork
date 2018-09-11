@@ -74,7 +74,7 @@ SERVER_EMAIL = 'xxxxx'
 DEFAULT_FROM_EMAIL = '安全管控平台<Se@outlook.com>'
 
 #设置队列存储
-BROKER_URL = 'amqp://user:psd@xx.xx.xx.xx/vhost'    #设置与rabbitmq一致
+BROKER_URL = 'amqp://security:security123@127.0.0.1/security'    #设置与rabbitmq一致
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
 
 # Application definition
@@ -133,7 +133,7 @@ WSGI_APPLICATION = 'SeMF.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -147,16 +147,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'SeMF',
-        'USER': 'username',
-        'PASSWORD': 'password',
-        'HOST': 'XX.XX.XX.XX',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS':{
                    'init_command':"SET sql_mode='STRICT_TRANS_TABLES' ",
                    'charset':'utf8',}
     }
 }
-'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

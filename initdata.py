@@ -9,6 +9,7 @@ def initmenu():
     from RBAC import models
     menu_list = [
                  {'title':'资产管理','icon':"&#xe653;"},
+                 {'title':'审批请求','icon':"&#xe63c;"},
                  {'title':'网络映射','icon':"&#xe674;"},
                  {'title':'漏洞管理','icon':"&#xe663;"},
                  {'title':'任务管理','icon':"&#xe628;"},
@@ -24,8 +25,12 @@ def initmenu():
         
     submain_list = [
                     {'title':'资产列表','icon':"&#xe60a;",'parent_title':'资产管理'},
-                    {'title':'资产审批','icon':"&#xe60b;",'parent_title':'资产管理'},
-                    {'title':'交接审批','icon':"&#xe607;",'parent_title':'资产管理'},
+                    {'title':'资产分配','icon':"&#xe609;",'parent_title':'资产管理'},
+                    {'title':'资产扫描','icon':"&#xe641;",'parent_title':'资产管理'},
+                    {'title':'资产发现','icon':"&#xe615;",'parent_title':'资产管理'},
+                    
+                    {'title':'资产审批','icon':"&#xe60b;",'parent_title':'审批请求'},
+                    {'title':'交接审批','icon':"&#xe607;",'parent_title':'审批请求'},
                     
                     {'title':'映射列表','icon':"&#xe60a;",'parent_title':'网络映射'},
                     
@@ -53,6 +58,9 @@ def initmenu():
         
     permission_list = [
                        {'title':'资产列表','url':'/asset/user/','is_menu':True,'menu_title':'资产列表'},
+                       {'title':'资产分配','url':'/asset/deliver/','is_menu':True,'menu_title':'资产分配'},
+                       {'title':'资产扫描','url':'/asset/scan/','is_menu':True,'menu_title':'资产扫描'},
+                       {'title':'资产发现','url':'/asset/discover/','is_menu':True,'menu_title':'资产发现'},
                        {'title':'资产审批','url':'/asset/request/','is_menu':True,'menu_title':'资产审批'},
                        {'title':'交接审批','url':'/asset/handover/','is_menu':True,'menu_title':'交接审批'},
                        {'title':'资产指定','url':'/asset/manage/','is_menu':False},
@@ -177,6 +185,9 @@ def initrole():
     from RBAC.models import Role,Permission
     permissions_list=[
         {'title':'安全管理员','permissions':'资产列表'},
+        {'title':'安全管理员','permissions':'资产分配'},
+        {'title':'安全管理员','permissions':'资产扫描'},
+        {'title':'安全管理员','permissions':'资产发现'},
         {'title':'安全管理员','permissions':'资产审批'},
         {'title':'安全管理员','permissions':'交接审批'},
         {'title':'安全管理员','permissions':'资产指定'},

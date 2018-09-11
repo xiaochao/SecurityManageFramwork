@@ -8,6 +8,12 @@
 				{% csrf_token %}
 				{{ form.as_table }}
 			</div>
+            <div class="layui-row">
+                <div class="layui-col-xs4" ><a href="{% url 'createoscsv' %}">os_csv模板</a></div>
+                <div class="layui-col-xs4" ><a href="{% url 'createwebcsv' %}">web_csv模板</a></div>
+				<div class="layui-col-xs4" ><a href="{% url 'createvulncsv' %}">vuln_csv模板</a></div>
+            </div>
+            <br>
 			<div class="layui-row">
 				<div class="layui-col-xs6" >
 			    	<button type="reset" class="layui-btn layui-btn-radius" >重置表单</button>
